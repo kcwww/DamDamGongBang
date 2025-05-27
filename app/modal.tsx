@@ -1,17 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
+import { useRouter } from 'expo-router';
 import { Text, View } from '@/components/Themed';
 
-export default function ModalScreen() {
+const ModalScreen = () => {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/modal.tsx" />
+      <View className="bg-white p-6 rounded-xl w-4/5">
+        <Text className="text-xl font-bold mb-4">
+          모달 제목
+        </Text>
+        <Text className="text-gray-600 mb-4">
+          모달 내용이 여기에 들어갑니다.
+        </Text>
+        <Text
+          className="bg-blue-500 text-white text-center py-2 rounded-lg"
+          onPress={() => router.back()}
+        >
+          닫기
+        </Text>
+      </View>
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
@@ -22,14 +33,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });
+
+export default ModalScreen;

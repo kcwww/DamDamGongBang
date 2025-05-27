@@ -13,6 +13,7 @@ import "react-native-reanimated";
 import "./global.css";
 
 import { useColorScheme } from "@/components/useColorScheme";
+import ModalProvider from "@/providers/ModalProvider";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -27,7 +28,7 @@ export const unstable_settings = {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+const RootLayout = () => {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font,
@@ -51,15 +52,20 @@ export default function RootLayout() {
   return <RootLayoutNav />;
 }
 
-function RootLayoutNav() {
+const RootLayoutNav = () => {
   const colorScheme = useColorScheme();
 
   return (
+    <>
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
       </Stack>
     </ThemeProvider>
+    <ModalProvider />
+    </>
   );
 }
+
+export default RootLayout;
