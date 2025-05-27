@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Text, View } from '@/components/Themed';
 
@@ -7,7 +7,7 @@ const ModalScreen = () => {
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
+    <View className="flex-1 items-center justify-center bg-black/50">
       <View className="bg-white p-6 rounded-xl w-4/5">
         <Text className="text-xl font-bold mb-4">
           모달 제목
@@ -27,14 +27,5 @@ const ModalScreen = () => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-});
 
 export default ModalScreen;

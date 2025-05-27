@@ -1,9 +1,9 @@
 // components/GlobalModal.tsx
-import { Modal, View, StyleSheet, Text, Button } from 'react-native';
+import { Modal, View, Text, Button } from 'react-native';
 import { useModalStore } from '@/stores/modalStore';
 
 export function GlobalModal() {
-  const { isOpen, data, closeModal, } = useModalStore();
+  const { isOpen, data, closeModal } = useModalStore();
 
   if (!isOpen) return null;
 
@@ -14,8 +14,8 @@ export function GlobalModal() {
       animationType="fade"
       onRequestClose={closeModal}
     >
-      <View style={styles.modalOverlay}>
-        <View style={styles.modalContent}>
+      <View className="flex-1 bg-black/50 justify-center items-center">
+        <View className="bg-white p-5 rounded-lg w-4/5 max-w-[400px]">
           <Text>
             {data}
           </Text>
@@ -25,19 +25,3 @@ export function GlobalModal() {
     </Modal>
   );
 }
-
-const styles = StyleSheet.create({
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
-    width: '80%',
-    maxWidth: 400,
-  },
-});
