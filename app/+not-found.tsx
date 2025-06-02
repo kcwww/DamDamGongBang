@@ -1,10 +1,10 @@
-import { Link, Stack } from 'expo-router';
-import { Text, View } from '@/components/Themed';
+import { Link, Stack } from "expo-router";
+import { Text, View } from "react-native";
 
 const NotFoundScreen = () => {
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
+      <Stack.Screen options={{ title: "Oops!" }} />
       <View className="flex-1 items-center justify-center p-5">
         <Text className="text-xl font-bold">This screen doesn't exist.</Text>
 
@@ -14,6 +14,6 @@ const NotFoundScreen = () => {
       </View>
     </>
   );
-}
+};
 
 export default NotFoundScreen;

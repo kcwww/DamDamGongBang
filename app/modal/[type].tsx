@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Platform } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { Text, View } from "@/components/Themed";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const ModalScreen = () => {
