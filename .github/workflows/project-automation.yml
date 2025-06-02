@@ -26,6 +26,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.WRITE_PROJECT_TOKEN }}
+          user: "kcwww"
           project_id: 2
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.ready }} # Target status
@@ -38,6 +39,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.WRITE_PROJECT_TOKEN }}
+          user: "kcwww"
           project_id: 2
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.done }} # Target status
@@ -50,6 +52,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.WRITE_PROJECT_TOKEN }}
+          user: "kcwww"
           project_id: 2
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.in_progress }} # Target status
@@ -62,6 +65,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.WRITE_PROJECT_TOKEN }}
+          user: "kcwww"
           project_id: 2
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.done }} # Target status
