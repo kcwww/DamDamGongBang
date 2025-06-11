@@ -1,9 +1,10 @@
 import React from "react";
 import { View } from "react-native";
 import { Calendar as RNCalendar } from "react-native-calendars";
+import type { DateData } from "react-native-calendars";
 
 interface CalendarProps {
-  onDayPress?: (date: any) => void;
+  onDayPress?: (date: DateData) => void;
   markedDates?: {
     [date: string]: {
       selected?: boolean;
