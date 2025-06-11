@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import Calendar from "./_components/Calender";
+import Calendar from "./_components/Calendar";
 
 const Record = () => {
   return (
