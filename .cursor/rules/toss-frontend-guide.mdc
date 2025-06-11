@@ -1,6 +1,8 @@
 ---
-description: 
-globs: 
+description: "Enforces frontend design guidelines on React/TypeScript files"
+globs:
+  - "**/*.tsx"
+  - "**/*.ts"
 alwaysApply: true
 ---
 
